@@ -48,7 +48,7 @@
   </nav>
 
   <!-- Header -->
-  <header class="masthead bg-primary text-white text-center" id="proposals">
+  <header class="masthead bg-primary text-white text-center sp-bg" id="proposals">
     <div class="container">
       <h1 class="text-uppercase mb-0">Proposals</h1>
       <hr class="star-light">
@@ -75,22 +75,22 @@
       <hr class="star-dark mb-5">
       <h3 class="font-weight-light mb-5"><span id="filtered">Entire Network</span> - <span id="stakingBalance">Loading...</span></h3>
 			<div class="row mb-5">
-				<div class="col-md-3">
+				<div class="col-md-3 mb-4">
 					<h4>Participation</h4>
           <span style="font-size:20px;"><i class="fas fa-users"></i></span><br />
           <span class="statresult" id="participation">-</span>
 				</div>		
-				<div class="col-md-3">
+				<div class="col-md-3 mb-4">
 					<h4>Proposal 1</h4>
           <span style="font-size:20px;"><i class="fas fa-gas-pump"></i></span><br />
           <span class="statresult" id="proposal1">-</span>
 				</div>		
-				<div class="col-md-3">
+				<div class="col-md-3 mb-4">
 					<h4>Proposal 2</h4>
           <span style="font-size:20px;"><i class="fas fa-gas-pump"></i> <i class="fas fa-cookie-bite"></i></span><br />
           <span class="statresult" id="proposal2">-</span>
 				</div>		
-				<div class="col-md-3">
+				<div class="col-md-3 mb-4">
 					<h4>Neither/Unsure</h4>
           <span style="font-size:20px;"><i class="fas fa-question"></i></span><br />
           <span class="statresult" id="proposal0">-</span>
@@ -136,15 +136,15 @@
       <div class="row">
         <div class="col-lg-12 text-center">
           <div class="text-center mt-4 mb-5">
-            <a class="btn btn-xl btn-outline-light voteBtn vb1" onclick="vote(1);return false;" href="#">
+            <a class="btn btn-xl btn-outline-light voteBtn vb1 mb-4" onclick="vote(1);return false;" href="#">
               <i class="fas fa-gas-pump mr2"></i>
               Proposal One
             </a>
-            <a class="btn btn-xl btn-outline-light voteBtn vb2" onclick="vote(2);return false;" href="#">
+            <a class="btn btn-xl btn-outline-light voteBtn vb2 mb-4" onclick="vote(2);return false;" href="#">
               <i class="fas fa-cookie-bite mr-2"></i>
               Proposal Two
             </a>
-            <a class="btn btn-xl btn-outline-light voteBtn vb0" onclick="vote(0);return false;" href="#">
+            <a class="btn btn-xl btn-outline-light voteBtn vb0 mb-4" onclick="vote(0);return false;" href="#">
               <i class="fas fa-question mr-2"></i>
               Neither/Unsure
             </a>
@@ -164,7 +164,7 @@
     </div>
   </section>
   
-  <section class="text-center" id="about">
+  <section class="text-center sp-bg" id="about">
     <div class="container">
       <h1 class="text-uppercase mb-5">About</h1>
 			
@@ -198,6 +198,16 @@
     </div>
   </section>
   <style>
+  .sp-bg{
+    background-size: cover;
+
+    background: url(img/bg.png);
+  }
+  .main-bg{
+    background-size: cover;
+
+    background-image: url(img/main.png);
+  }
   .text-white p>a, .text-white li>a {
     color: white!important;
     text-decoration: underline;
