@@ -306,16 +306,19 @@
     function displayTez(a){
       return formatMoney((a/1000000).toFixed(0), 0) + "ꜩ";
     }
+    function displayRolls(a){
+      return formatMoney(a, 0);
+    }
     function viewStats(d){
       if(typeof d == 'undefined') d =''
       $.getJSON("https://api.tezvote.com/?delegate="+d, function( data ) {
-        console.log(data);
         if (d){
           $('#filtered').html("Selected Baker");
+          $("#stakingBalance").html(displayRolls(data.staking_rolls) + " rolls ("+displayPercent(data.staking_balance,data.network_balance)+" of network)");
         } else {
           $('#filtered').html("Entire Network");
+          $("#stakingBalance").html(displayRolls(data.staking_rolls) + " rolls");
         }
-        $("#stakingBalance").html(displayTez(data.staking_balance));
         $("#participation").html(displayPercent(data.total, data.staking_balance));
         $("#proposal1").html(displayPercent(data[1], data.total));
         $("#proposal2").html(displayPercent(data[2], data.total));
