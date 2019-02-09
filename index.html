@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="TezVote is a free online stakeholder sentiment tool to help delegators and delegates to decide on how to vote for protocol amendments">
+  <meta name="author" content="TezTech Labs">
+
+  <title>TezVote -  Make your tez heard</title>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+  <link href="css/freelancer.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">TezVote</a>
+      <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#proposals">Proposals</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#results">Results</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#vote">Vote</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="masthead bg-primary text-white text-center" id="proposals">
+    <div class="container">
+      <h1 class="text-uppercase mb-0">Proposals</h1>
+      <hr class="star-light">
+			<p class="lead">Nomadic Labs have published their intentions to propose two competing protocol amendments. Both proposals make small changes, with the overall goal to test the on-chain governance mechanism of Tezos. You can read more about the <a href="https://blog.nomadic-labs.com/meanwhile-at-nomadic-labs-1.html" target="_blank">proposals here</a> and take part in the <a href="https://www.kialo.com/tezos-protocol-amendment-1-25295/25295.0/25295.0">online discussion on Kialo.</a></p>
+			<div class="row mb-0">
+				<div class="col-md-4 offset-md-2">
+					<h3>Proposal One</h3>
+          <p style="font-size:40px;"><i class="fas fa-gas-pump"></i></p>
+					<p style="font-size:20px;">Increase gas limits</p>
+				</div>
+				<div class="col-md-4">
+					<h3>Proposal Two</h3>
+          <p style="font-size:40px;"><i class="fas fa-gas-pump"></i> <i class="fas fa-cookie-bite"></i></p>
+					<p style="font-size:20px;">Increase gas limits AND reduce roll size</p>
+				</div>
+			</div>
+    </div>
+  </header>
+
+	<section class="text-center" id="results">
+    <div class="container">
+      <h1 class="text-uppercase mb-5">Results</h1>
+			
+      <hr class="star-dark mb-5">
+      <h3 class="font-weight-light mb-5"><span id="filtered">Entire Network</span> - <span id="stakingBalance">Loading...</span></h3>
+			<div class="row mb-5">
+				<div class="col-md-3">
+					<h4>Participation</h4>
+          <span style="font-size:20px;"><i class="fas fa-users"></i></span><br />
+          <span class="statresult" id="participation">-</span>
+				</div>		
+				<div class="col-md-3">
+					<h4>Proposal 1</h4>
+          <span style="font-size:20px;"><i class="fas fa-gas-pump"></i></span><br />
+          <span class="statresult" id="proposal1">-</span>
+				</div>		
+				<div class="col-md-3">
+					<h4>Proposal 2</h4>
+          <span style="font-size:20px;"><i class="fas fa-gas-pump"></i> <i class="fas fa-cookie-bite"></i></span><br />
+          <span class="statresult" id="proposal2">-</span>
+				</div>		
+				<div class="col-md-3">
+					<h4>Neither/Unsure</h4>
+          <span style="font-size:20px;"><i class="fas fa-question"></i></span><br />
+          <span class="statresult" id="proposal0">-</span>
+				</div>	
+			</div>
+			<div class="row mb-5">
+				<div class="col-md-12">
+					<p class="text-center"><strong>Enter a baker address below to see statistics for individual bakers</strong></p>
+				</div>
+				<div class="col-md-6 offset-md-3">
+					<div class="form-group floating-label-form-group controls mb-0">
+						<label>Baker Address</label>
+						<input class="form-control" id="baker" type="text" placeholder="tz1" data-validation-required-message="Please enter your bakers address" aria-invalid="false">
+						<p class="help-block text-danger"></p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2 offset-md-4">
+					<div class="form-group">
+						<button class="btn btn-primary btn-xl btn-block" id="filterButton">Filter</button>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="form-group">
+						<button class="btn btn-secondary btn-xl btn-block" id="clearButton">Clear</button>
+					</div>
+				</div>
+			</div>
+			
+    </div>
+  </section>
+  <section class="bg-primary text-white mb-0" id="vote">
+    <div class="container">
+      <h2 class="text-center text-uppercase text-white">Vote</h2>
+      <hr class="star-light mb-5">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <p class="lead">Participate today, and indicate your voting preference ahead of the upcoming proposals. All you need to do is send a simple transaction from your wallet to our smart contract. The transaction is free, other than network fees.</p>
+          <p class="lead"><strong>Start by choosing your voting preference below:</strong></p>
+        </div>
+			</div>
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <div class="text-center mt-4 mb-5">
+            <a class="btn btn-xl btn-outline-light voteBtn vb1" onclick="vote(1);return false;" href="#">
+              <i class="fas fa-gas-pump mr2"></i>
+              Proposal One
+            </a>
+            <a class="btn btn-xl btn-outline-light voteBtn vb2" onclick="vote(2);return false;" href="#">
+              <i class="fas fa-cookie-bite mr-2"></i>
+              Proposal Two
+            </a>
+            <a class="btn btn-xl btn-outline-light voteBtn vb0" onclick="vote(0);return false;" href="#">
+              <i class="fas fa-question mr-2"></i>
+              Neither/Unsure
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-12 text-center" id="transfer-details" style="display:none;">
+          <ul class="details-list">
+						<li><span class="ll">To:</span> <a href="https://tzscan.io/KT1ExvG3EjTrvDcAU7EqLNb77agPa5u6KvnY" target="_blank">KT1ExvG3EjTrvDcAU7EqLNb77agPa5u6KvnY</a></li>
+						<li><span class="ll">Amount:</span> 0ꜩ</li>
+						<li><span class="ll">Fee:</span> 1900μꜩ (0.0019ꜩ)</li>
+						<li><span class="ll">Gas Limit:</span> 16000</li>
+						<li><span class="ll">Storage Limit:</span> 50</li>
+						<li><span class="ll">Parameter:</span> <span id="pref"></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="text-center" id="about">
+    <div class="container">
+      <h1 class="text-uppercase mb-5">About</h1>
+			
+      <hr class="star-dark mb-5">
+      <div class="row">
+        <div class="col-lg-12 text-center mb-5">
+          <p class="lead">TezVote is a free tool developed by <a href="https://teztech.io" target="_blank">TezTech Labs</a>. We aim to provide user friendly tools to help delegation services and delegators when it comes to the protocol amendment process and on-chain voting. We believe a transparent, on-chain and secure method to survey stake-holder sentiment is vital to help delegators and delegates through this process.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 mr-auto">
+          <h4>Why should we use this?</h4>
+          <p>Currently, delegation services have control of a lot of voting power, but some lack the tools to accurately gauge the voting sentiment of their users. We hope TezVote will provide an accurate, auditable and on-chain process to assist with this process.</p>
+        </div>
+        <div class="col-lg-6 ml-auto">
+          <h4>How does voting work?</h4>
+          <p>We have deploed a very simple smart contract which when called, stores an address and a corresponding vote. This is important because it is on-chain, and can't be set by anyone but the owner of the private key.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 mr-auto">
+          <h4>Where do the results come from?</h4>
+          <p>We pull all results from the blockchain, and store them in a secondary database to improve usability, whilst remaining auditable. We use the latest snapshot taken on the network to measure the weight (tez) of each delegate and corresponding on-chain vote.</p>
+        </div>
+        <div class="col-lg-6 ml-auto">
+          <h4>Help me understand the proposals!</h4>
+          <p>The best place to read and discuss the pros and cons of the current proposals is on <a href="https://www.kialo.com/tezos-protocol-amendment-1-25295/25295.0/25295.0" target="_blank">Kialo</a> - you can also ask on <a href="https://www.reddit.com/r/tezos" target="_blank">Reddit</a>, follow the <a href="https://blog.nomadic-labs.com/meanwhile-at-nomadic-labs-1.html" target="_blank">Nomadic Labs blog</a> or join the <a href="https://riot.im/app/#/room/#tezos:matrix.org" target="_blank">Riot chat room</a></p>
+        </div>
+			</div>
+			
+    </div>
+  </section>
+  <style>
+  .text-white p>a {
+    color: white!important;
+    text-decoration: underline;
+  }
+  .text-white p>a:hover {
+    color: white!important;
+    text-decoration: none;
+  }
+  .statresult{
+    font-size: 25px;
+    font-weight: bold;
+  }
+    .voteBtn.active {
+      background-color: white;
+      color: black;
+    }
+    .details-list li>span.ll{
+        position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+    .details-list {
+      dislay:block;
+      width: 450px;
+      margin: 0 auto;
+        list-style: none;
+      padding-left: 100px;
+      text-align: right;
+        position: relative;
+    }
+  </style>
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-5 mb-lg-0">
+          <h4 class="text-uppercase mb-4">Find us Online</h4>
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item">
+              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://twitter.com/TezTechLabs" target="_blank">
+                <i class="fab fa-fw fa-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://github.com/TezTech" target="_blank">
+                <i class="fab fa-fw fa-github"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-8">
+          <h4 class="text-uppercase mb-4">Contact TezTech</h4>
+          <p class="lead mb-0">Feel free to reach us on Twitter, or send an email to hello@teztech.io!</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="copyright py-4 text-center text-white">
+    <div class="container">
+      <small>Copyright &copy; TezVote 2019</small>
+    </div>
+  </div>
+
+  <div class="scroll-to-top d-lg-none position-fixed ">
+    <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>
+
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+
+  <script src="js/freelancer.min.js"></script>
+  
+  
+  <script>
+    function formatMoney(n, c, d, t) {
+      var c = isNaN(c = Math.abs(c)) ? 2 : c,
+        d = d === undefined ? "." : d,
+        t = t === undefined ? "," : t,
+        s = n < 0 ? "-" : "",
+        i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))),
+        j = (j = i.length) > 3 ? j % 3 : 0;
+      return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+    }
+    function displayPercent(a, b){
+      if (b == 0) return "-";
+      return (Math.round((a/b)*10000)/100).toFixed(2) + "%";
+    }
+    function displayTez(a){
+      return formatMoney((a/1000000).toFixed(0), 0) + "ꜩ";
+    }
+    function viewStats(d){
+      if(typeof d == 'undefined') d =''
+      $.getJSON("https://api.tezvote.com/?delegate="+d, function( data ) {
+        console.log(data);
+        if (d){
+          $('#filtered').html("Selected Baker");
+        } else {
+          $('#filtered').html("Entire Network");
+        }
+        $("#stakingBalance").html(displayTez(data.staking_balance));
+        $("#participation").html(displayPercent(data.total, data.staking_balance));
+        $("#proposal1").html(displayPercent(data[1], data.total));
+        $("#proposal2").html(displayPercent(data[2], data.total));
+        $("#proposal0").html(displayPercent(data[0], data.total));
+      });
+    }
+    $('document').ready(function(){
+      viewStats();
+      $('#filterButton').click(function(){
+        var b = $('#baker').val().trim();
+        if (!validBakerAddress(b)) return alert("Please enter a valid baker");
+        viewStats(b);
+      });
+      $('#clearButton').click(function(){
+        $('#baker').val('');
+        viewStats();
+      });
+    });
+    function validBakerAddress(){
+      return true;
+    }
+    function vote(n){
+      $('#pref').html(n);
+      $('.voteBtn').removeClass('active');
+      $('.vb'+n).addClass('active');
+      $('#transfer-details').show();
+    }
+  </script>
+</body>
+
+</html>
