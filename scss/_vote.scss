@@ -1,0 +1,139 @@
+#vote {
+    background-color: #f2eef5;
+    table {
+        font-size: 10.3pt;
+        tbody {
+            tr {
+                td, th {
+                    vertical-align: middle;
+                    color: #555556;
+                }
+                td {
+                  font-size: 12pt;
+                  padding: 1.18rem;
+                }
+            }
+        }
+        tbody>tr:nth-child(odd)>td,
+        tbody>tr:nth-child(odd)>th {
+          background-color: #f8f5fa; // Choose your own color here
+        }
+    }
+    .gas {
+      padding: 0 0 20px 0;
+      height: 85px;
+      img {
+        height: 60px;
+      }
+    }
+    .table-container {
+      padding: 30px 20px;
+      background-color: #ffffff;
+    }
+    p {
+      font-size: 13pt;
+      font-weight: 300;
+      color: #555556;
+    }
+    h4 {
+      color: #813993;
+    }
+    .please-note {
+      margin-top: 31px;
+      .text {
+        color: #d13c3c;
+      }
+      display: block;
+    }
+    .please-note2 {
+      display: none;
+    }
+}
+
+.details-pref-pad{
+    padding: 50px;
+    margin-left: -50px;
+}
+
+.toggle-table-align {
+  text-align: center;
+}
+
+@media (max-width: 414px) {
+  .table-text {
+    span:nth-child(2) {
+      font-size: 10pt;
+    }
+  }
+}
+
+@media (max-width: 392px) {
+  .table-text {
+    span:nth-child(2) {
+      font-size: 8pt;
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  hr.horizontal-border {
+    display: none;
+  }
+  .side-border {
+    display: block;
+  }
+  p {
+    padding-bottom: 18px;
+  }
+  .please-note {
+    margin-top: 15px !important;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  hr.horizontal-border {
+    display: none;
+  }
+
+  .please-note {
+    position: absolute;
+    padding: 30px;
+    bottom: -47px;
+    left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  #vote {
+    .gas {
+      height: 85px;
+      img {
+        height: 60px;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  #vote {
+    .start-by h4 {
+      text-align: center;
+      font-size: 1.3rem;
+    }
+    .please-note2 {
+      display: block;
+      padding-top: 60px;
+      div {
+        margin: auto;
+      }
+    }
+    .please-note {
+      display: none;
+    }
+    .votes-panel {
+      padding-top: 90px;
+    }
+  }
+}

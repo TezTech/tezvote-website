@@ -1,0 +1,53 @@
+#survey {
+  input {
+    border-radius: 0;
+    padding: 15.75px 16px;
+    border: 1px solid #ffffff;
+    width: 100%;
+  }
+  h5.font-weight-normal {
+    color: #212529;
+  }
+  .statresult {
+    font-size: 30pt;
+    font-weight: 300;
+  }
+  .entire-network {
+    padding: 20px;
+  }
+  .baker-address {
+    color: #555556;
+  }
+  .survey-block {
+    .survey-img {
+      height: 85px;
+      margin-bottom: 20px;
+      img {
+        height: 60px;
+      }
+    }
+  }
+}
+@media (max-width: 576px) {
+  #survey {
+    .pbutton {
+      width: 40%;
+      margin: auto;
+    }
+    .entire-network {
+      font-size: 1rem;
+    }
+    .survey-block {
+      .survey-img {
+        height: 85px;
+        margin-bottom: 5px;
+        img {
+          height: 60px;
+        }
+      }
+      h4 {
+        font-size: 15pt;
+      }
+    }
+  }
+}

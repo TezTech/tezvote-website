@@ -1,6 +1,7 @@
 // Typography
 body {
   @include body-font;
+  background-color: #f8f5fa;
 }
 
 h1,
@@ -10,6 +11,11 @@ h4,
 h5,
 h6 {
   @include heading-font;
+}
+
+h5 {
+  color: #813993;
+  letter-spacing: 2pt !important;
 }
 
 // Custom Horizontal Rule with Star Icon
@@ -92,7 +98,164 @@ section {
   a {
     width: 3.5rem;
     height: 3.5rem;
-    background-color: fade-out($gray-900, 0.5);
+    border-radius: 50% !important;
+    background-color: #7f3394;
     line-height: 3.1rem;
+  }
+}
+
+// Justified
+.justified {
+  text-align: justify
+}
+
+a .pbutton {
+  padding: 25px;
+}
+
+
+// .side-border {
+//   opacity: 0.10;
+//   background-image: linear-gradient(#ebeb, #ebeb);
+//   background-size: 4px 100%;
+//   background-repeat: no-repeat;
+//   background-position: center center; height: 100%;
+// }
+
+button.tzbutton {
+  border: 1px solid #ffffff;
+  font-size: 10pt;
+  font-weight: 600;
+  border-radius: 0px !important;
+  padding: 16px;
+  letter-spacing: 1pt !important;
+}
+
+a.tzbutton {
+  border: 1px solid #ffffff;
+  font-size: 10pt;
+  font-weight: 600;
+  border-radius: 0px !important;
+  color: #ffffff;
+  padding: 16px;
+  outline:none;
+  text-decoration:none;
+  letter-spacing: 1pt !important;
+}
+
+a.tzbutton.sbutton {
+  width: 175px;
+  padding: 4px 38px;
+  line-height: 1;
+  i {
+    line-height: 2;
+    font-size: 20pt;
+  }
+  .text-social-span {
+    padding-top: 5px;
+  }
+  .text-social-span span:first-child {
+    font-size: 9pt;
+    font-weight: 300;
+  }
+  .text-social-span span:nth-child(3) {
+    font-size: 17pt;
+    font-weight: 600;
+  }
+}
+
+a.tzbutton.sbutton.twitter {
+  background: #813993;
+  border: 1px solid #813993;
+  color: #ffffff;
+}
+a.tzbutton.sbutton.twitter:hover {
+  border: 1px solid black;
+  color: black;
+  background: transparent;
+}
+a.tzbutton.sbutton.github {
+  border: 1px solid black;
+  color: black;
+}
+a.tzbutton.sbutton.github:hover {
+  background: #813993;
+  border: 1px solid #813993;
+  color: #ffffff;
+}
+
+a.tzbutton:hover {
+  background: #ffffff;
+  color: #813993;
+}
+
+a.tzbutton:focus, a.tzbutton:active {
+  outline: none !important;
+  -moz-outline: 0 none;
+  text-decoration: none !important;
+  box-shadow: none;
+}
+
+button.tzbutton.pbutton {
+  border: none;
+  background: #813993;
+  color: #ffffff;
+  padding: 16px;
+  border: 1px solid #ffffff;
+
+}
+
+button.tzbutton.pbutton:hover {
+  background: #ffffff;
+  color: #813993;
+  border: 1px solid #813993;
+}
+
+.flat-buttons {
+  border-radius: 0px;
+}
+
+button.tzbutton.gbutton {
+  background: #ece2ef;
+  border: 1px solid #813993;
+  color: #813993;
+  font-size: 10pt;
+  padding: 15px;
+}
+
+button.tzbutton.gbutton:hover, button.tzbutton.gbutton.active{
+  background: #813993;
+  color: #ffffff;
+}
+
+a.tzbutton.rbutton {
+  color: #813993;
+  border: 1px solid #ffffff;
+  background: #ffffff;
+}
+
+a.tzbutton.rbutton:hover {
+  border: 1px solid #343434;
+  color: #ffffff;
+  background: #343434;
+}
+
+div .col-lg-6 .lg-img, div .col-lg-5 .lg-img {
+  width: inherit;
+}
+
+p {
+  line-height: 2;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+  a.tzbutton.sbutton {
+    width: 48%
+  }
+}
+@media (max-width: 429px) {
+  a.tzbutton.sbutton {
+    width: 47%
   }
 }

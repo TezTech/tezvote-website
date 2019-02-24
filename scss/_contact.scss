@@ -52,3 +52,38 @@
 form .row:first-child .floating-label-form-group {
   border-top: 1px solid $gray-200;
 }
+
+.contact-us {
+  background-color: #f2eef5;
+  a strong {
+    color: black;
+    font-weight: 600;
+  }
+  p {
+    font-size: 13pt;
+    font-weight: 300;
+  }
+}
+
+.indent-contact {
+  padding-bottom: 80px;
+}
+
+@media (max-width: 576px) {
+  .contact-us {
+    .contact-img {
+      text-align: center;
+      img {
+        width: 300px;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .contact-us {
+    .contact-img {
+      padding-top: 50px;
+    }
+  }
+}

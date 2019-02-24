@@ -1,10 +1,41 @@
 .footer {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-  background-color: $secondary;
+  background: linear-gradient(to right, #4d1ea2 0%,#bd5f9d 100%);
+  padding: 20px;
   color: $white;
+  .social-icons {
+    a {
+      color: #ffffff;
+      line-height: 4.6;
+      font-size: 14pt;
+      margin: 0 10px 5px 0;
+      &:hover, &:active, &:focus {
+        color:#343434 !important;
+      }
+    }
+  }
 }
 
 .copyright {
+  background: linear-gradient(to right, #4d1ea2 0%,#bd5f9d 100%);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-top: .1rem solid rgba(255, 255, 255, .5);
   background-color: darken($secondary, 10%);
+  font-size: 25px;
+}
+
+
+
+@media (max-width: 576px) {
+  .social-icons {
+    text-align: center !important;
+
+  }
+}
+
+.fa-github:hover{
+  color:#343434 !important;
+}
+.fa-twitter:hover{
+  color:#343434 !important;
 }
